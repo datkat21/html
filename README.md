@@ -4,7 +4,7 @@ The Html library allows you to efficiently create HTML elements within any clien
 
 ## Why?
 
-It makes creating HTML elements much easier and less painful.
+It makes creating HTML elements much easier and less painful.   
 Consider the following JavaScript using native DOM:
 ```js
 const paragraph = document.createElement("p");
@@ -21,11 +21,11 @@ const paragraph =
   .class("my-paragraph")
   // Set the text
   .text("Hello, world!")
-  // This is an automatic querySelector (also works if you pass in document.body)
+  // This is an automatic querySelector (also works if you pass in `document.body`)
   .appendTo("body");
 ```
 
-I made this library a few motnhs ago and have used it in several projects, so I thought it was about time to give it its own repository to easily re-use when needed.
+I made this library a few months ago and have used it in several projects, so I thought it was about time to give it its own repository to easily re-use when needed.
 
 ## Usage
 
