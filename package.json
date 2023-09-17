@@ -2,7 +2,7 @@
   "name": "@datkat21/html",
   "version": "1.0.1",
   "de ription": "simple html library for client-side js",
-  "main": "html.js",
+  "main": "src/html.js",
   "type": "module",
   "keywords": [
     "html",
@@ -13,7 +13,7 @@
   "author": "datkat21",
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/datkat21/html/issues"
   },
-  "homepage": "https://github.com/datkat21/html#readme"
+  "homepage": "https://github.com/datkat21/html#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
