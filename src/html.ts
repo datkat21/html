@@ -1,4 +1,4 @@
-export class Html {
+export default class Html {
   elm: HTMLInputElement | HTMLElement;
   constructor(e: string) {``
     this.elm = document.createElement(e || "div");

@@ -1,4 +1,4 @@
-export class Html {
+export default class Html {
     elm;
     constructor(e) {
         ``;
