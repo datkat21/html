@@ -1,6 +1,6 @@
 {
   "name": "@datkat21/html",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "simple html library for client-side js",
   "main": "src/html.js",
   "type": "module",
