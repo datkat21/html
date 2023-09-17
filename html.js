@@ -1,4 +1,4 @@
-export class Html {
+export default class Html {
   constructor(e) {
     this.elm = document.createElement(e || "div");
   }
