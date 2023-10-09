@@ -4,7 +4,7 @@ The Html library allows you to efficiently create HTML elements within any clien
 
 ## Why?
 
-It makes creating HTML elements much easier and less painful.   
+It makes creating HTML elements much easier and less confusing.   
 Consider the following JavaScript using native DOM:
 ```js
 const paragraph = document.createElement("p");
@@ -26,6 +26,64 @@ const paragraph =
 ```
 
 I made this library a few months ago and have used it in several projects, so I thought it was about time to give it its own repository to easily re-use when needed.
+
+## New in v1.1.0
+
+- A few new methods have been introduced.
+- Added full JSDoc documentation.
+- You can now (finally) create Html instances from actual HTML elements.
+
+### New static methods
+
+These are very useful if you want to quickly retrieve a HTML element from the DOM as a new Html instance.
+
+- `Html.from(element)` Retrieve a HTML element as a new Html instance
+- `Html.qs(query)` Retrieve a querySelector as a new Html instance
+- `Html.qsa(query)` Retrieve all querySelector elements as an array of new Html instances
+
+Examples:
+
+```js
+Html.from(document.body) // Html { elm: <body> }
+Html.qs('p.red') // Html { elm: <p class="red"> }
+Html.qsa('li') // Array(3) [ { elm: <li> }, {...}, {...} ]
+```
+
+### New methods
+
+- `queryHtml(selector)` querySelector something and return as a new Html instance
+- `styleJs({ ... })` Style as JS syntax (`backgroundColor` instead of `background-color` for example)
+- `getText()` Retrieve innerText
+- `getHtml()` Retrieve innerHTML
+- `getValue()` Retrieve value
+
+Examples:
+
+```js
+let body = Html.qs('body');
+
+// queryHtml
+body.queryHtml('p.red') // Html { elm: <p class="red"> }
+
+// styleJs
+body.styleJs({
+  backgroundColor: '#101010',
+  fontFamily: 'sans-serif',
+})
+
+let div = new Html('div').appendTo('body');
+
+// getText
+let p = new Html('p').text('Hello, world!').appendTo(div);
+p.getText() // 'Hello, world!'
+
+// getHtml
+div.getHtml() // <p>Hello, world!</p>
+
+// getValue
+let input = Html.qs('input');
+let value = input.getValue();
+```
 
 ## Usage
 
@@ -111,6 +169,15 @@ There are a few more advanced methods to how the Html class works:
     "backdrop-filter": "blur(4px)"
   });
   ```
+- `.styleJs()`  
+   Add inline styles (JS syntax)
+  ```js
+  new Html("span").styleJs({
+    color: "red",
+    fontSize: "18px",
+    backdropFilter: "blur(4px)"
+  });
+  ```
 - `.attr()`  
    Set attributes for the element
   ```js
@@ -194,6 +261,42 @@ There are a few more advanced methods to how the Html class works:
 
   // later
   div.cleanup();
+  ```
+- `.swapRef(elm)`  
+  Swap the element reference with a new one
+
+  ```js
+  const div = new Html("div").appendTo("body");
+
+  const div2 = document.querySelector("body > div.two");
+
+  div.swapRef(div2); // div now references div2
+  ```
+- `.getText()`
+  Get text of the element
+
+  ```js
+  const div = new Html("div").text("This is my text...");
+
+  div.getText(); // 'This is my text...'
+  ```
+- `.getHtml()`
+  Get HTML content of the element
+
+  ```js
+  const div = new Html("div").html("<p>This is my <b>HTML</b> content...</p>");
+
+  div.getHtml(); // '<p>This is my <b>HTML</b> content...</p>'
+  ```
+- `.getValue()`
+  Get input value of the element
+
+  ```js
+  const input = new Html("input").attr({ type: 'text' });
+
+  // after typing...
+
+  input.getValue(); // 'I typed this text'
   ```
 
 ## Repository

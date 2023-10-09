@@ -1,14 +1,19 @@
 {
   "name": "@datkat21/html",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "simple html library for client-side js",
   "main": "src/html.js",
   "type": "module",
   "keywords": [
     "html",
     "client-side",
+    "typescript",
     "javascript",
-    "library"
+    "library",
+    "easy-to-use",
+    "jsdoc",
+    "bun",
+    "node"
   ],
   "author": "datkat21",
   "license": "ISC",
@@ -24,6 +29,7 @@
   },
   "homepage": "https://github.com/datkat21/html#readme",
   "devDependencies": {
+    "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }
 }
