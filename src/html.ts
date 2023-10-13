@@ -188,8 +188,12 @@ export default class Html {
    */
   attr(obj: { [x: string]: string }): Html {
     for (let key in obj) {
-      if (obj[key] !== null) this.elm.setAttribute(key, obj[key]);
-      else this.elm.removeAttribute(key);
+      if (obj[key] !== null && obj[key] !== undefined) {
+        this.elm.setAttribute(key, obj[key]);
+      }
+      else {
+        this.elm.removeAttribute(key);
+      }
     }
     return this;
   }
