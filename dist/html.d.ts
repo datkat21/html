@@ -36,6 +36,12 @@ export default class Html {
      */
     queryHtml(selector: string): Html | null;
     /**
+     * Sets the ID of the element.
+     * @param val The ID to set.
+     * @returns Html
+     */
+    id(val: string): Html;
+    /**
      * Toggle on/off a class.
      * @param val The class to toggle.
      * @returns Html

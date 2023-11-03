@@ -204,6 +204,12 @@ There are a few more advanced methods to how the Html class works:
   new Html("span").classOff("my-class");
   // <span></span>
   ```
+- `.id()`  
+   Set the id of an element
+   ```js
+  new Html("div").id("my-id");
+  // <div id="my-id"></div>
+   ```
 - `.on(eventName, eventHandler)`  
    Add an event listener
 
@@ -298,6 +304,22 @@ There are a few more advanced methods to how the Html class works:
 
   input.getValue(); // 'I typed this text'
   ```
+
+## Building
+
+Clone the repository:
+
+```
+git clone https://github.com/datkat21/html.git
+cd html
+```
+
+Install dependencies and run build script:
+
+```
+npm i
+npm run build # Build script.
+```
 
 ## Repository
 

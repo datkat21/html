@@ -55,18 +55,17 @@ export default class Html {
     return new Html(this.elm.querySelector(selector) as HTMLElement);
   }
   /**
-   * Adds an ID to an element.
-   * @param val The ID to add.
+   * Sets the ID of the element.
+   * @param val The ID to set.
    * @returns Html
    */
-  class(val: string[]): Html {
+  id(val: string): Html {
     if(this.elm.id != null) {
       throw Error("The element already has an ID.");
     }
     this.elm.id = val;
     return this;
   }
-
   /**
    * Toggle on/off a class.
    * @param val The class to toggle.

@@ -18,7 +18,7 @@
   "author": "datkat21",
   "license": "ISC",
   "scripts": {
-    "build": "npx tsc && node build.js"
+    "build": "npx tsc && node format.js"
   },
   "repository": {
     "type": "git",
