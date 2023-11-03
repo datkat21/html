@@ -15,3 +15,4 @@ const result = await format(compiledJsContent, {
 });
 
 fs.writeFileSync(compiledJsPath, result);
+console.log(`Formatting (and building) complete. Wrote to ${compiledJsPath}`)
