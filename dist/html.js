@@ -60,9 +60,6 @@ export default class Html {
    * @returns Html
    */
   id(val) {
-    if (this.elm.id != null) {
-      throw Error("The element already has an ID.");
-    }
     this.elm.id = val;
     return this;
   }
