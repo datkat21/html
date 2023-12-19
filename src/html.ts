@@ -47,12 +47,28 @@ export default class Html {
     return this.elm.querySelector(selector);
   }
   /**
-   * querySelector something and get Html access to it.
-   * @param selector The query selector.
-   * @returns The HTML element (as Html)
+   * An easier querySelector method.
+   * @param query The string to query
+   * @returns a new Html
    */
-  queryHtml(selector: string): Html | null {
-    return new Html(this.elm.querySelector(selector) as HTMLElement);
+  qs(query: string): Html | null {
+    if (this.elm.querySelector(query)) {
+      return Html.from(this.elm.querySelector(query) as HTMLElement);
+    } else {
+      return null;
+    }
+  }
+  /**
+   * An easier querySelectorAll method.
+   * @param query The string to query
+   * @returns a new Html
+   */
+  qsa(query: string): Array<Html | null> | null {
+    if (this.elm.querySelector(query)) {
+      return Array.from(this.elm.querySelectorAll(query)).map(e => Html.from(e as HTMLElement));
+    } else {
+      return null;
+    }
   }
   /**
    * Sets the ID of the element.

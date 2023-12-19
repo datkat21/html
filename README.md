@@ -27,6 +27,11 @@ const paragraph =
 
 I made this library a few months ago and have used it in several projects, so I thought it was about time to give it its own repository to easily re-use when needed.
 
+## New in v1.1.3
+
+- **REMOVED** `.queryHtml()` from local class methods in favor of `.qs()` and `.qsa()`
+- Added `.qs()`, `.qsa()`, and `.id()` to local class methods
+
 ## New in v1.1.0
 
 - A few new methods have been introduced.

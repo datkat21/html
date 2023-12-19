@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/datkat21/html#readme",
   "devDependencies": {
+    "@types/web": "^0.0.128",
+    "bun-types": "^1.0.18-1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }

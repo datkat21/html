@@ -30,11 +30,17 @@ export default class Html {
      */
     query(selector: string): HTMLElement | null;
     /**
-     * querySelector something and get Html access to it.
-     * @param selector The query selector.
-     * @returns The HTML element (as Html)
+     * An easier querySelector method.
+     * @param query The string to query
+     * @returns a new Html
      */
-    queryHtml(selector: string): Html | null;
+    qs(query: string): Html | null;
+    /**
+     * An easier querySelectorAll method.
+     * @param query The string to query
+     * @returns a new Html
+     */
+    qsa(query: string): Array<Html | null> | null;
     /**
      * Sets the ID of the element.
      * @param val The ID to set.
