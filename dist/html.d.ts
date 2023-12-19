@@ -1,3 +1,5 @@
+/// <reference types="web" />
+/// <reference types="bun-types" />
 export default class Html {
     /** The HTML element referenced in this instance. Change using `.swapRef()`, or remove using `.cleanup()`. */
     elm: HTMLInputElement | HTMLElement;
