@@ -106,18 +106,5 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
-
-    // Bun-specific
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true,
-    "types": [
-      "bun-types", // add Bun global
-      "web"
-    ],
-  },
-  "exclude": [
-    "build.ts",
-    "./dist/html.d.ts"
-  ]
+  }
 }
