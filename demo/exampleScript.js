@@ -44,6 +44,9 @@ Html.qs("body").styleJs({
 
 // Get the count of paragraphs
 new Html("p")
-  .text(`There were ${Html.qsa("p").length} existing <p> tags found.`)
+  .text(`There are ${Html.qsa("p").length} existing <p> tags.`)
   .appendTo("body");
 
+// Test of v1.1.3 new .qs and .qsa feature
+const text = Html.from('body').qs('p').getText();
+console.log(text); // returns "This is a test paragraph.", the text of the first paragraph

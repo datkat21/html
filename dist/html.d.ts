@@ -158,7 +158,7 @@ export default class Html {
      * @param elm Element to create from.
      * @returns Html
      */
-    static from(elm: HTMLElement | string): Html;
+    static from(elm: HTMLElement | string): Html | null;
     /**
      * An easier querySelector method.
      * @param query The string to query

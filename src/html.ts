@@ -65,7 +65,9 @@ export default class Html {
    */
   qsa(query: string): Array<Html | null> | null {
     if (this.elm.querySelector(query)) {
-      return Array.from(this.elm.querySelectorAll(query)).map(e => Html.from(e as HTMLElement));
+      return Array.from(this.elm.querySelectorAll(query)).map((e) =>
+        Html.from(e as HTMLElement),
+      );
     } else {
       return null;
     }
@@ -128,7 +130,7 @@ export default class Html {
    * @param obj The styles to apply (as an object of `key: value;`)
    * @returns Html
    */
-  styleJs(obj: { [key: string]: string | null; }): Html {
+  styleJs(obj: { [key: string]: string | null }): Html {
     for (const key of Object.keys(obj)) {
       //@ts-ignore No other workaround I could find.
       this.elm.style[key] = obj[key];
@@ -215,8 +217,7 @@ export default class Html {
     for (let key in obj) {
       if (obj[key] !== null && obj[key] !== undefined) {
         this.elm.setAttribute(key, obj[key]);
-      }
-      else {
+      } else {
         this.elm.removeAttribute(key);
       }
     }
@@ -267,8 +268,14 @@ export default class Html {
    * @param elm Element to create from.
    * @returns Html
    */
-  static from(elm: HTMLElement | string) {
-    return new Html(elm);
+  static from(elm: HTMLElement | string): Html | null {
+    if (typeof elm === "string") {
+      const element = Html.qs(elm);
+      if (element === null) return null;
+      else return element;
+    } else {
+      return new Html(elm);
+    }
   }
   /**
    * An easier querySelector method.
@@ -289,7 +296,9 @@ export default class Html {
    */
   static qsa(query: string): Array<Html | null> | null {
     if (document.querySelector(query)) {
-      return Array.from(document.querySelectorAll(query)).map(e => Html.from(e as HTMLElement));
+      return Array.from(document.querySelectorAll(query)).map((e) =>
+        Html.from(e as HTMLElement),
+      );
     } else {
       return null;
     }

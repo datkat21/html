@@ -269,7 +269,13 @@ export default class Html {
    * @returns Html
    */
   static from(elm) {
-    return new Html(elm);
+    if (typeof elm === "string") {
+      const element = Html.qs(elm);
+      if (element === null) return null;
+      else return element;
+    } else {
+      return new Html(elm);
+    }
   }
   /**
    * An easier querySelector method.
