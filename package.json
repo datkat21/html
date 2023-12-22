@@ -16,7 +16,7 @@
     "node"
   ],
   "author": "datkat21",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "npx tsc && node format.js"
   },
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/datkat21/html#readme",
   "devDependencies": {
+    "esbuild": "0.19.10",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }
