@@ -124,7 +124,7 @@ export default class Html {
      * @returns Html
      */
     attr(obj: {
-        [x: string]: string;
+        [x: string]: any;
     }): Html;
     /**
      * Set the text value of the element. Only works if element is `input` or `textarea`.

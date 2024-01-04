@@ -213,7 +213,7 @@ export default class Html {
    * @param obj The attributes to set (as an object of `key: value;`)
    * @returns Html
    */
-  attr(obj: { [x: string]: string }): Html {
+  attr(obj: { [x: string]: any }): Html {
     for (let key in obj) {
       if (obj[key] !== null && obj[key] !== undefined) {
         this.elm.setAttribute(key, obj[key]);
