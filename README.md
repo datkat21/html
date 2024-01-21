@@ -29,6 +29,10 @@ I made this library a few months ago and have used it in several projects, so I 
 
 ## New in v1.1.3
 
+Alongside `.append()`, `.appendTo()`, and `.appendMany()`, Html now has `.prepend()`, `.prependTo()`, and `.prependMany()`! They function the same, but start from the beginning of the element instead of the end.
+
+## New in v1.1.3
+
 - **REMOVED** `.queryHtml()` from local class methods in favor of `.qs()` and `.qsa()`
 - Added `.qs()`, `.qsa()`, and `.id()` to local class methods
 
