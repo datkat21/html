@@ -27,7 +27,7 @@ const paragraph =
 
 I made this library a few months ago and have used it in several projects, so I thought it was about time to give it its own repository to easily re-use when needed.
 
-## New in v1.1.3
+## New in v1.1.6
 
 Alongside `.append()`, `.appendTo()`, and `.appendMany()`, Html now has `.prepend()`, `.prependTo()`, and `.prependMany()`! They function the same, but start from the beginning of the element instead of the end.
 
