@@ -235,8 +235,40 @@ There are a few more advanced methods to how the Html class works:
     console.log(e);
   });
   ```
-
 - `.un(eventName, eventHandler)`  
+- `.prepend(elm)`
+  Add a new element to the beginning of the element
+  ```js
+  const container = new Html("div").prepend(
+    new Html("span").text("Hello, world!")
+  );
+  ```
+- `.prependMany(...elms)`
+  Add multiple elements to the start
+  ```js
+  new Html("div").prependMany(
+    new Html("span").class("h1").text("Hello!"),
+    new Html("span").text("Hi!")
+  );
+  /*
+  <div>
+    <span class="h1">Hello!</span>
+    <span>Hi!</span>
+  </div>
+  */
+  ```
+- `.prependTo()`
+  Prepend the element to the beginning of another element
+  ```js
+  new Html("div").prependTo("body");
+  
+  /*
+  <body>
+    <div></div>
+    <p>Hello</p>
+  </body>
+  */
+  ```
    Remove an event listener (if a function is available)
 
   ```js
@@ -246,7 +278,6 @@ There are a few more advanced methods to how the Html class works:
 
   new Html("span").un("click", myEvent);
   ```
-
 - `.append(elm)`
   Add a new element inside the element
   ```js
@@ -266,6 +297,18 @@ There are a few more advanced methods to how the Html class works:
     <span class="h1">Hello!</span>
     <span>Hi!</span>
   </div>
+  */
+  ```
+- `.appendTo()`
+  Append the element to another element
+  ```js
+  new Html("div").appendTo("body");
+  
+  /*
+  <body>
+    <p>Hello</p>
+    <div></div>
+  </body>
   */
   ```
 - `.cleanup()`  
