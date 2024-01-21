@@ -173,6 +173,21 @@ export default class Html {
     return this;
   }
   /**
+   * Append this element to another element. Uses `appendChild()` on the parent.
+   * @param parent Element to append to. HTMLElement, Html, and string (as querySelector) are supported.
+   * @returns Html
+   */
+  prependTo(parent: HTMLElement | Html | string): Html {
+    if (parent instanceof HTMLElement) {
+      parent.prepend(this.elm);
+    } else if (parent instanceof Html) {
+      parent.elm.prepend(this.elm);
+    } else if (typeof parent === "string") {
+      document.querySelector(parent)?.prepend(this.elm);
+    }
+    return this;
+  }
+  /**
    * Append an element. Typically used as a `.append(new Html(...))` call.
    * @param elem The element to append.
    * @returns Html
@@ -190,6 +205,23 @@ export default class Html {
     return this;
   }
   /**
+   * Prepend an element. Typically used as a `.prepend(new Html(...))` call.
+   * @param elem The element to prepend.
+   * @returns Html
+   */
+  prepend(elem: string | HTMLElement | Html): Html {
+    if (elem instanceof HTMLElement) {
+      this.elm.prepend(elem);
+    } else if (elem instanceof Html) {
+      this.elm.prepend(elem.elm);
+    } else if (typeof elem === "string") {
+      const newElem = document.createElement(elem);
+      this.elm.prepend(newElem);
+      return new Html(newElem.tagName);
+    }
+    return this;
+  }
+  /**
    * Append multiple elements. Typically used as a `.appendMany(new Html(...), new Html(...)` call.
    * @param elements The elements to append.
    * @returns Html
@@ -197,6 +229,17 @@ export default class Html {
   appendMany(...elements: any[]): Html {
     for (const elem of elements) {
       this.append(elem);
+    }
+    return this;
+  }
+  /**
+   * Prepend multiple elements. Typically used as a `.prependMany(new Html(...), new Html(...)` call.
+   * @param elements The elements to prepend.
+   * @returns Html
+   */
+  prependMany(...elements: any[]): Html {
+    for (const elem of elements) {
+      this.prepend(elem);
     }
     return this;
   }
