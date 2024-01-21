@@ -102,17 +102,35 @@ export default class Html {
      */
     appendTo(parent: HTMLElement | Html | string): Html;
     /**
+     * Append this element to another element. Uses `appendChild()` on the parent.
+     * @param parent Element to append to. HTMLElement, Html, and string (as querySelector) are supported.
+     * @returns Html
+     */
+    prependTo(parent: HTMLElement | Html | string): Html;
+    /**
      * Append an element. Typically used as a `.append(new Html(...))` call.
      * @param elem The element to append.
      * @returns Html
      */
     append(elem: string | HTMLElement | Html): Html;
     /**
+     * Prepend an element. Typically used as a `.prepend(new Html(...))` call.
+     * @param elem The element to prepend.
+     * @returns Html
+     */
+    prepend(elem: string | HTMLElement | Html): Html;
+    /**
      * Append multiple elements. Typically used as a `.appendMany(new Html(...), new Html(...)` call.
      * @param elements The elements to append.
      * @returns Html
      */
     appendMany(...elements: any[]): Html;
+    /**
+     * Prepend multiple elements. Typically used as a `.prependMany(new Html(...), new Html(...)` call.
+     * @param elements The elements to prepend.
+     * @returns Html
+     */
+    prependMany(...elements: any[]): Html;
     /**
      * Clear the innerHTML of the element.
      * @returns Html

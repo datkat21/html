@@ -173,7 +173,7 @@ export default class Html {
     return this;
   }
   /**
-   * Append this element to another element. Uses `appendChild()` on the parent.
+   * Prepend this element to another element. Uses `prepend()` on the parent.
    * @param parent Element to append to. HTMLElement, Html, and string (as querySelector) are supported.
    * @returns Html
    */
