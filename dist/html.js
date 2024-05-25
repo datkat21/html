@@ -1,3 +1,7 @@
+/*!
+Html library by datkat21 on GitHub. Licensed under MIT
+https://github.com/datkat21/html
+!*/
 export default class Html {
   /** The HTML element referenced in this instance. Change using `.swapRef()`, or remove using `.cleanup()`. */
   elm;

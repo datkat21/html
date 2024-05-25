@@ -48,5 +48,20 @@ new Html("p")
   .appendTo("body");
 
 // Test of v1.1.3 new .qs and .qsa feature
-const text = Html.from('body').qs('p').getText();
+const text = Html.from("body").qs("p").getText();
 console.log(text); // returns "This is a test paragraph.", the text of the first paragraph
+
+// Test of v1.1.6 prepending feature
+const div3 = new Html("div")
+  .append(new Html("span").text("Second"))
+  .prepend(new Html("span").text("First"))
+  .appendTo("body");
+
+// Test of v1.2.0 getElement feature (basically .qs() but retrieving a HTMLElement)
+const div4 = new Html("div")
+  .append(new Html("p").text("Hello!"))
+  .appendTo("body");
+
+const innerParagraph = div4.getElement("p").textContent; // Hello!
+
+console.log("Fetched via getElement:", innerParagraph);

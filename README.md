@@ -27,6 +27,48 @@ const paragraph =
 
 I made this library a few months ago and have used it in several projects, so I thought it was about time to give it its own repository to easily re-use when needed.
 
+
+## Usage
+
+Install the module:
+
+```
+npm i @datkat21/html
+```
+
+Import it into your project via method(s):
+
+1. Copy and import html.js as a module:
+  ```js
+  import Html from './html.js';
+  ```
+2. Loading via package manager:
+  ```js
+  import Html from '@datkat21/html';
+  ```
+
+If you copy `html.js` into your website code and are using a code editor that supports TypeScript annotations, please also copy the html.d.ts file to smoothen your development experience with the library.
+If you are creating with TypeScript (e.g. Deno or Bun), you may simply bring `html.ts` into your project if you don't want to import it from the NPM repository.
+
+
+## New in v1.2.0
+
+It's mid 2024 now, time for a new minor update!
+
+Thanks to the #4 pull request by SpcFORK, a few things have been tweaked to make the library run better and build quicker. There is also a new method: `getElement()`.
+
+`getElement()` acts similarly to `qs()` but returns a HTMLElement instead of a Html instance. This could be easier in some instances such as this:
+
+```js
+// Old method to retrieve sub-child HTML element (a bit more verbose)
+const div = new Html('div').append(new Html('p').text("Hello!"));
+const innerParagraph = div.qs("p").elm.textContent; // Hello!
+
+// New method (simpler)
+const div = new Html('div').append(new Html('p').text("Hello!"));
+const innerParagraph = div.getElement("p").textContent; // Hello!
+```
+
 ## New in v1.1.6
 
 Alongside `.append()`, `.appendTo()`, and `.appendMany()`, Html now has `.prepend()`, `.prependTo()`, and `.prependMany()`! They function the same, but start from the beginning of the element instead of the end.
@@ -93,25 +135,6 @@ div.getHtml() // <p>Hello, world!</p>
 let input = Html.qs('input');
 let value = input.getValue();
 ```
-
-## Usage
-
-Install the module:
-
-```
-npm i @datkat21/html
-```
-
-Import it into your project via method(s):
-
-1. Copy and import html.js as a module:
-  ```js
-  import Html from './html.js';
-  ```
-2. Loading via package manager:
-  ```js
-  import Html from '@datkat21/html';
-  ```
 
 ## Documentation
 

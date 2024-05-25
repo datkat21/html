@@ -1,6 +1,6 @@
 {
   "name": "@datkat21/html",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "description": "simple html library for client-side js",
   "main": "dist/html.js",
   "type": "module",
@@ -16,6 +16,7 @@
     "node"
   ],
   "author": "datkat21",
+  "contributors": ["slashedCodes", "ThinLiquid", "SpcFORK"],
   "license": "MIT",
   "scripts": {
     "build": "npx tsc && npm run format && npm run builder",
