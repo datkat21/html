@@ -96,13 +96,19 @@ export default class Html {
      */
     un(ev: string, cb: EventListenerOrEventListenerObject): Html;
     /**
+     * Retrieve the corresponding HTMLElement.
+     * @param element The element to retrieve. Can be an HTMLElement, Html instance, or a string (as query selector).
+     * @returns The corresponding HTMLElement or null if QS and element are not found.
+     */
+    getElement(element: HTMLElement | Html | string): HTMLElement;
+    /**
      * Append this element to another element. Uses `appendChild()` on the parent.
      * @param parent Element to append to. HTMLElement, Html, and string (as querySelector) are supported.
      * @returns Html
      */
     appendTo(parent: HTMLElement | Html | string): Html;
     /**
-     * Append this element to another element. Uses `appendChild()` on the parent.
+     * Prepend this element to another element. Uses `prepend()` on the parent.
      * @param parent Element to append to. HTMLElement, Html, and string (as querySelector) are supported.
      * @returns Html
      */

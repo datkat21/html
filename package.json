@@ -18,7 +18,13 @@
   "author": "datkat21",
   "license": "MIT",
   "scripts": {
-    "build": "npx tsc && node format.js"
+    "build": "npx tsc && npm run format && npm run builder",
+    "builder": "node build.js",
+    "format": "node format.js",
+    "build:watch": "npx tsc -w",
+    "format:watch": "node format.js -w",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
